@@ -13,6 +13,9 @@ function start_node {
   cd ..
 }
 
+echo "Installing old version of zold"
+gem install zold --version 0.0.1
+
 high=$(reserve_port)
 primary=$(start_node ${high} 9.9.9 --standalone)
 
@@ -23,6 +26,14 @@ zold remote add localhost ${high} --home=${low} --skip-ping
 trap "halt_nodes ${high}" EXIT
 
 wait_for_file ${low}/restarted
+
+echo "Check if old version has been uninstalled"
+zold_gems=$(gem list zold)
+if [[ "${zold_gems}" == *"zold"* ]]; then
+   echo "Old versions of Zold gem have not been uninstalled"
+   exit 16
+fi
+sleep 5
 
 echo "High node logs (port ${high}):"
 cat ${high}/log

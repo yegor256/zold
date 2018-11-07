@@ -298,7 +298,9 @@ module Zold
           begin
             code = exec("#{myself} #{args.join(' ')}", nohup_log)
             raise "Exit code is #{code}" if code != 0
-            exec(opts['nohup-command'], nohup_log)
+            Open3.popen3('gem uninstall zold -a --ignore-dependencies') do
+              exec(opts['nohup-command'], nohup_log)
+            end
           rescue StandardError => e
             nohup_log.print(Backtrace.new(e).to_s)
             if cycle < opts['nohup-max-cycles']

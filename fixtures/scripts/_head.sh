@@ -66,4 +66,3 @@ function halt_nodes {
     echo "Node at TCP port ${p} stopped!"
   done
 }
-
