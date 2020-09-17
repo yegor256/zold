@@ -31,10 +31,34 @@ Available options:"
       mine = Args.new(opts, @log).take || return
       command = mine[0]
       raise "A command is required, try 'zold alias --help'" unless command
+      case command
+      when 'set'    then set(mine[1], mine[2])
+      when 'remove' then remove(mine[1])
+      when 'show'   then show(mine[1])
+      end
+    end
 
-      # @todo #279:30min Implement command handling. As in other commands,
-      #  there should be case/when command/end loop and commands should be
-      #  implemented as methods.
+    # @todo #323:30min Implement the set command.
+    #  The set command expects 'wallet' which is the wallet id
+    #  and 'alias' (here called 'name' as alias is a Ruby keyword).
+    #  It writes this info into the alias file as described in #279.
+    def set(_wallet, _name)
+      raise NotImplementedError, 'This is not yet implemented'
+    end
+
+    # @todo #323:30min Implement the remove command.
+    #  The remove command expect an 'alias' (here called 'name' as alias
+    #  is a Ruby keyword).
+    #  It removes given alias from the alias file as described in #279.
+    def remove(_name)
+      raise NotImplementedError, 'This is not yet implemented'
+    end
+
+    # @todo #323:30min Implement the show command.
+    #  The show command expect an 'alias' (here called 'name' as alias
+    #  is a Ruby keyword).
+    #  It prints out wallet id corresponding with given alias from the alias file as described in #279.
+    def show(_name)
       raise NotImplementedError, 'This is not yet implemented'
     end
   end
