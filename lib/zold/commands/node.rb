@@ -116,6 +116,8 @@ module Zold
         o.string '--nohup-log',
           'The file to log output into (default: zold.log)',
           default: 'zold.log'
+        o.string '--nohup-log-rotate',
+          'Frequency of the log file rotation (daily, weekly or monthly)'
         o.integer '--nohup-log-truncate',
           'The maximum amount of bytes to keep in the file, and truncate it in half if it grows bigger',
           default: 1024 * 1024
@@ -393,12 +395,17 @@ the node won\'t connect to the network like that; try to do "zold remote reset" 
 
     def nohup(opts)
       pid = fork do
-        nohup_log = NohupLog.new(opts['nohup-log'], opts['nohup-log-truncate'])
+        nohup_log =
+          if opts['nohup-log-rotate']
+            NohupLogRotate.new(opts['nohup-log'], opts['nohup-log-rotate'])
+          else
+            NohupLog.new(opts['nohup-log'], opts['nohup-log-truncate'])
+          end
         Signal.trap('HUP') do
-          nohup_log.print("Received HUP, ignoring...\n")
+          Thread.new { nohup_log.print("Received HUP, ignoring...\n") }.join
         end
         Signal.trap('TERM') do
-          nohup_log.print("Received TERM, terminating...\n")
+          Thread.new { nohup_log.print("Received TERM, terminating...\n") }.join
           exit(-1)
         end
         myself = File.expand_path($PROGRAM_NAME)
@@ -518,6 +525,17 @@ the node won\'t connect to the network like that; try to do "zold remote reset" 
           end
         end
         total
+      end
+    end
+
+    # Rotated log facility for nohup
+    class NohupLogRotate
+      def initialize(file_path, rotation_age = 'daily')
+        @logger = ::Logger.new(file_path, rotation_age)
+      end
+
+      def print(data)
+        @logger << data
       end
     end
   end
