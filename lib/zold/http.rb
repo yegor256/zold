@@ -140,18 +140,21 @@ module Zold
     end
 
     def put(file)
-      HttpResponse.new(
-        Typhoeus::Request.put(
-          @uri,
-          accept_encoding: 'gzip',
-          body: IO.read(file),
-          headers: headers.merge(
-            'Content-Type': 'text/plain'
-          ),
-          connecttimeout: CONNECT_TIMEOUT,
-          timeout: 2 + File.size(file) * 0.01 / 1024
-        )
+      request = Typhoeus::Request.new(
+        @uri,
+        method: :put,
+        accept_encoding: 'gzip',
+        headers: headers.merge(
+          'Content-Type': 'text/plain'
+        ),
+        connecttimeout: CONNECT_TIMEOUT,
+        timeout: 2 + File.size(file) * 0.01 / 1024
       )
+      easy = Typhoeus::EasyFactory.new(request).get
+      easy.infilesize = file.size
+      easy.set_read_callback(file)
+      easy.perform
+      HttpResponse.new(request.response)
     rescue StandardError => e
       HttpError.new(e)
     end
