@@ -23,12 +23,12 @@
 require 'minitest/autorun'
 require_relative 'fake_home'
 require_relative 'test__helper'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/wallet'
-require_relative '../lib/zold/prefixes'
-require_relative '../lib/zold/amount'
-require_relative '../lib/zold/patch'
+require 'zold/key'
+require 'zold/id'
+require 'zold/wallet'
+require 'zold/prefixes'
+require 'zold/amount'
+require 'zold/patch'
 
 # Patch test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

@@ -23,10 +23,10 @@
 require 'minitest/autorun'
 require 'tmpdir'
 require_relative 'test__helper'
-require_relative '../lib/zold/wallet'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/tree_wallets'
+require 'zold/wallet'
+require 'zold/key'
+require 'zold/id'
+require 'zold/tree_wallets'
 
 # TreeWallets test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

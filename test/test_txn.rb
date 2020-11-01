@@ -24,9 +24,9 @@ require 'minitest/autorun'
 require 'tmpdir'
 require 'time'
 require_relative 'test__helper'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/txn'
-require_relative '../lib/zold/amount'
+require 'zold/id'
+require 'zold/txn'
+require 'zold/amount'
 
 # Txn test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

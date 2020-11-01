@@ -23,10 +23,10 @@
 require 'minitest/autorun'
 require 'tmpdir'
 require_relative 'fake_home'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/wallet'
-require_relative '../lib/zold/prefixes'
+require 'zold/key'
+require 'zold/id'
+require 'zold/wallet'
+require 'zold/prefixes'
 
 # Prefixes test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

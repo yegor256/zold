@@ -23,7 +23,7 @@
 require 'minitest/autorun'
 require 'concurrent'
 require_relative 'test__helper'
-require_relative '../lib/zold/hands'
+require 'zold/hands'
 
 # Hands test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

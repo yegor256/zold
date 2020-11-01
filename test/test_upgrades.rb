@@ -22,8 +22,8 @@
 
 require 'minitest/autorun'
 require_relative 'test__helper'
-require_relative '../lib/zold/upgrades'
-require_relative '../lib/zold/version_file'
+require 'zold/upgrades'
+require 'zold/version_file'
 
 # Upgrade test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

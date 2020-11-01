@@ -23,11 +23,11 @@
 require 'minitest/autorun'
 require 'tmpdir'
 require_relative 'test__helper'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/txn'
-require_relative '../lib/zold/amount'
-require_relative '../lib/zold/signature'
+require 'zold/key'
+require 'zold/id'
+require 'zold/txn'
+require 'zold/amount'
+require 'zold/signature'
 
 # Signature test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

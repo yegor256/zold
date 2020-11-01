@@ -24,10 +24,10 @@ require 'minitest/autorun'
 require 'webmock/minitest'
 require_relative 'test__helper'
 require_relative 'fake_home'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/thread_pool'
-require_relative '../lib/zold/wallets'
-require_relative '../lib/zold/hungry_wallets'
+require 'zold/key'
+require 'zold/thread_pool'
+require 'zold/wallets'
+require 'zold/hungry_wallets'
 
 # HungryWallets test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

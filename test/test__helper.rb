@@ -40,7 +40,9 @@ if ENV['CI'] == 'true'
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
-require_relative '../lib/zold/hands'
+$LOAD_PATH.unshift('../lib')
+
+require 'zold/hands'
 Zold::Hands.start
 
 require 'minitest/reporters'

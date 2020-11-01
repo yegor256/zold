@@ -25,11 +25,11 @@ require 'tmpdir'
 require 'time'
 require_relative 'fake_home'
 require_relative 'test__helper'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/age'
-require_relative '../lib/zold/copies'
-require_relative '../lib/zold/dir_items'
-require_relative '../lib/zold/wallet'
+require 'zold/id'
+require 'zold/age'
+require 'zold/copies'
+require 'zold/dir_items'
+require 'zold/wallet'
 
 # Copies test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

@@ -25,11 +25,11 @@ require 'concurrent'
 require 'threads'
 require_relative 'test__helper'
 require_relative 'fake_home'
-require_relative '../lib/zold/key'
-require_relative '../lib/zold/id'
-require_relative '../lib/zold/wallets'
-require_relative '../lib/zold/sync_wallets'
-require_relative '../lib/zold/amount'
+require 'zold/key'
+require 'zold/id'
+require 'zold/wallets'
+require 'zold/sync_wallets'
+require 'zold/amount'
 
 # SyncWallets test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

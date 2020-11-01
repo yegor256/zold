@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../lib/zold/gem'
+require 'zold/gem'
 require 'webmock/minitest'
 require 'minitest/autorun'
 

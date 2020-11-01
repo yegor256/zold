@@ -22,7 +22,7 @@
 
 require 'minitest/autorun'
 require_relative 'test__helper'
-require_relative '../lib/zold/age'
+require 'zold/age'
 
 # Age test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

@@ -25,8 +25,8 @@ require 'tmpdir'
 require 'open3'
 require 'English'
 require_relative 'test__helper'
-require_relative '../lib/zold/version'
-require_relative '../lib/zold/age'
+require 'zold/version'
+require 'zold/age'
 
 # Zold main module test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

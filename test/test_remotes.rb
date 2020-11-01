@@ -25,10 +25,10 @@ require 'tmpdir'
 require 'webmock/minitest'
 require 'threads'
 require_relative 'test__helper'
-require_relative '../lib/zold/log'
-require_relative '../lib/zold/age'
-require_relative '../lib/zold/remotes'
-require_relative '../lib/zold/verbose_thread'
+require 'zold/log'
+require 'zold/age'
+require 'zold/remotes'
+require 'zold/verbose_thread'
 
 # Remotes test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

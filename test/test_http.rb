@@ -27,8 +27,8 @@ require 'webmock/minitest'
 require 'zold/score'
 require 'random-port'
 require_relative 'test__helper'
-require_relative '../lib/zold/http'
-require_relative '../lib/zold/verbose_thread'
+require 'zold/http'
+require 'zold/verbose_thread'
 
 # Http test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

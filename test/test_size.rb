@@ -22,7 +22,7 @@
 
 require 'minitest/autorun'
 require_relative 'test__helper'
-require_relative '../lib/zold/size'
+require 'zold/size'
 
 # Size test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

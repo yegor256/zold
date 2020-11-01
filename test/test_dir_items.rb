@@ -24,9 +24,9 @@ require 'minitest/autorun'
 require 'tmpdir'
 require 'threads'
 require_relative 'test__helper'
-require_relative '../lib/zold/age'
-require_relative '../lib/zold/endless'
-require_relative '../lib/zold/dir_items'
+require 'zold/age'
+require 'zold/endless'
+require 'zold/dir_items'
 
 # DirItems test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

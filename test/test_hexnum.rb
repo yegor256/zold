@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 require 'minitest/autorun'
-require_relative '../lib/zold/hexnum'
+require 'zold/hexnum'
 
 # Hexnum test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

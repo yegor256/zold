@@ -23,7 +23,7 @@
 require 'minitest/autorun'
 require 'threads'
 require_relative 'test__helper'
-require_relative '../lib/zold/log'
+require 'zold/log'
 
 # Log test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

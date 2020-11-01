@@ -24,7 +24,7 @@ require 'minitest/autorun'
 require 'tmpdir'
 require 'openssl'
 require_relative 'test__helper'
-require_relative '../lib/zold/key'
+require 'zold/key'
 
 # Key test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)

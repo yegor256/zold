@@ -22,7 +22,7 @@
 
 require 'minitest/autorun'
 require_relative 'test__helper'
-require_relative '../lib/zold/amount'
+require 'zold/amount'
 
 # Amount test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
