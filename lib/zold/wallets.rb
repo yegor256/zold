@@ -38,13 +38,13 @@ module Zold
       @dir = dir
     end
 
-    # @todo #70:30min Let's make it smarter. Instead of returning
-    #  the full path let's substract the prefix from it if it's equal
-    #  to the current directory in Dir.pwd.
     def to_s
       mine = Pathname.new(File.expand_path(@dir))
       home = Pathname.new(File.expand_path(Dir.pwd))
-      mine.relative_path_from(home).to_s
+      if mine.to_s.index(home.to_s)
+        mine = mine.to_s[home.to_s.length, mine.to_s.length]
+        mine = Pathname.new(mine)
+      end
     end
 
     def path
